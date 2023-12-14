@@ -69,8 +69,8 @@ def main():
 
    
     for abbreviation, (name, score) in abbreviations.items():
-        clean_abbreviation = abbreviation.replace("'", "")
-        print(f"{clean_abbreviation}:{name} (Score: {score})")
+        c_abbreviation = abbreviation.replace("'", "")
+        print(f"{c_abbreviation}:{name} (Score: {score})")
 
 if __name__ == "__main__":
     main()
