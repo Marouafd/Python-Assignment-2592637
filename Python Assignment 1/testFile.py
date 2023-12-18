@@ -4,15 +4,13 @@ from newPy import read_names, read_values, generate_abbreviations_for_word, calc
 
 class TestNewPy(unittest.TestCase):
     def setUp(self):
-        # Set up any initial conditions for your tests
         pass
 
     def tearDown(self):
-        # Clean up after each test
         pass
 
     def test_read_names(self):
-        # Test the read_names function with your provided trees.txt
+     
         names = read_names('trees.txt')
         expected_names = [
             'Alder', 'Crab Apple', 'Common Ash', 'Silver Birch', 'Downy Birch', 'European Beech', 'Box', 'Wild Cherry',
@@ -27,7 +25,7 @@ class TestNewPy(unittest.TestCase):
         self.assertEqual(names, expected_names)
 
     def test_read_values(self):
-        # Test the read_values function with your provided values.txt
+       
         values = read_values('values.txt')
         expected_values = {
             'A': 25, 'B': 8, 'C': 8, 'D': 9, 'E': 35, 'F': 7, 'G': 9, 'H': 7,
@@ -38,17 +36,16 @@ class TestNewPy(unittest.TestCase):
         self.assertEqual(values, expected_values)
 
     def test_generate_abbreviations_for_word(self):
-        # Mock the random.sample function to always return 'BC'
         with patch('random.sample', return_value=['B', 'C']):
             abbreviations = generate_abbreviations_for_word('ABC', {'A': 10, 'B': 5, 'C': 8})
 
-        # Test the generated abbreviations
         self.assertEqual(abbreviations, {('ABC', 0)})
 
     def test_calculate_score(self):
-        # Test the calculate_score function with a sample abbreviation and word
         score = calculate_score('ABC', 'ABC', {'A': 10, 'B': 5, 'C': 8})
         self.assertEqual(score, 0)
 
 if __name__ == '__main__':
     unittest.main()
+
+
